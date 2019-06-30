@@ -8,7 +8,8 @@ categories: docs redis
 comes from <https://redis.io/topics/cluster-tutorial>
 
 <br/>
-## 시작하기
+### 시작하기
+
 Redis Cluster 를 이해하기 위한 문서로, 어떻게 설정하는지, 테스트하는지, 조작하는지에 대한 설명입니다. 사용자 입장에서 Redis Cluster 가 어떻게 동작하는지에 대해 알아봅니다.   
 > ##### 앞으로의 튜토리얼은 Redis version 3.0 or higher 에서만 가능합니다.
 
