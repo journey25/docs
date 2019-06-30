@@ -1,1 +1,3 @@
 journey-docs
+- Redis
+  - translate
