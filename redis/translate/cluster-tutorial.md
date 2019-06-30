@@ -8,10 +8,8 @@ categories: docs redis
 comes from <https://redis.io/topics/cluster-tutorial>
 
 ### 시작하기
-
 Redis Cluster 를 이해하기 위한 문서로, 어떻게 설정하는지, 테스트하는지, 조작하는지에 대한 설명입니다. 사용자 입장에서 Redis Cluster 가 어떻게 동작하는지에 대해 알아봅니다.   
 > ##### 앞으로의 튜토리얼은 Redis version 3.0 or higher 에서만 가능합니다.
-
 
 ### Redis Cluster 101 레디스 클러스터 소개
 여러 대의 레디스 인스턴스를 이용하여 **자동 샤딩** 될 수 있도록 구성할 수 있습니다.  
@@ -38,7 +36,7 @@ Redis Cluter 노드는 두 개의 TCP connection 을 필요로 합니다. 예를
 ##### 3. 클라이언트 포트는 모든 클라이언트에게 개방되어야 하고 추가로 다른 클러스터 노드들에게도 개방되어야 합니다. (키 마이그레이션에 이용됩니다)
 ##### 4. 클러스터 버스 포트는 모든 다른 노드들에게 개방되어야 합니다.
 
-<br/>
+
 ### Redis Cluster data sharding 레디스 클러스터의 샤딩
 Redis Cluster 는 consistent hashing 을 이용하지 않고 다른 형태의 샤딩을 이용는데, 모든 키는 **hash slot** 을 일부라고 여깁니다.
 
@@ -58,14 +56,14 @@ Redis Cluster 는 멀티키 지원을 하는데 하나의 명령으로 실행되
 즉 {foo}key 와 key{foo} 가 같은 hash slot 을 가지고 있다는 게 보장됩니다.
 ```
 
-<br/>
+
 ### Redis Cluster master-slave model 레디스 클러스터의 마스터-슬레이브 모델
 일부 노드의 상태가 실패로 있거나 주노드와 커뮤니케이션이 불가능한 노드가 발생한 경우에도 운용이 가능하도록 하기 위해 Redis Cluster 는 마스터-슬레이브 모델을 이용합니다.
 
 위의 예제 중 Node B 가 더이상 이용 가능지 않은 상태일 때 5501 ~ 11000 의 hash slot 에 대한 정보 제공이 되지 않으므로 클러스터 이용이 불가능해 집니다.
 그래서 클러스터가 생성될 때 마스터 노드에 대한 슬레이브 노드도 생성됩니다. 최종적으로 마스터 노드 _A, B, C_ 와 슬레이브 노드 _A1, B1, C1_ 이 존재합니다. B1 은 B 의 복제본으로 Node B 가 실패하는 경우 B1 이 마스터 노드가 되어 서비스를 제공합니다. 이 때 B, B1 이 동시에 실패하는 경우에는 Cluster 이용이 불가합니다.
 
-<br/>
+
 ### Redis Cluster consistency guarantees 레디스 클러스트의 일관성 보장
 **강력한 일관성** 은 보장하지 않습니다. 특정한 상황에서 쓰기 조작이 유실될 수 있습니다.
 
@@ -90,7 +88,7 @@ Z1 이 B 에 보내는 쓰기 명령에 대해 **maximum window** 가 존재하�
 
 
 
-<br/>
+
 ##### _일부 클러스터 관련 이해를 위한 부분만 옮겼습니다._
 ---
 
