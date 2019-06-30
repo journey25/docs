@@ -7,7 +7,8 @@ categories: docs redis
 
 comes from <https://redis.io/topics/cluster-tutorial>
 
-<br/>
+
+
 ### Resharding the cluster 리샤딩
 Redis Cluster 의 *리샤딩* 은 기본적으로 _hash slot_ 을 한쪽 노드에서 다른 노드로 이동하는 것입니다. 그리고 클러스터 생성할 때와 마찬가지로 `redis-cli` 프로그램으로 실행할 수 있습니다.
 
@@ -41,7 +42,8 @@ redis-cli --cluster check 127.0.0.1:7000
 ```
 이 때 이동시킨 마스터 노드의 slot 갯수가 줄어든 것을 확인할 수 있을 것입니다.
 
-<br/>
+
+
 ### Scripting a resharding operation 리샤딩 스크립트
 얼마나 옮길지, 어디에서 어디로 옮길지 매번 입력하는 방식 대신, 아래 명령어를 이용할 경우 한번에 실행되게 할 수 있습니다.
 ```
