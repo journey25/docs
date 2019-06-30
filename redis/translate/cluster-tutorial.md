@@ -93,7 +93,8 @@ Z1 이 B 에 보내는 쓰기 명령에 대해 **maximum window** 가 존재하�
 ---
 
 
-### binary protocol: Cluster bus는 노드끼리의 데이터 교환을 위한 별도의 바이너리 프로토콜을 이용하는데 정보 교환시 더 적은 대역폭, 더 적은 시간이 소요되도록 맞춰진 프로토콜입니다.  
+###### binary protocol
+Cluster bus는 노드끼리의 데이터 교환을 위한 별도의 바이너리 프로토콜을 이용하는데 정보 교환시 더 적은 대역폭, 더 적은 시간이 소요되도록 맞춰진 프로토콜입니다.  
 [^2]: (CRC16 으로 얻어진 값) % 16384
 
 [redis-cluster-tutorial](https://redis.io/topics/cluster-tutorial)
