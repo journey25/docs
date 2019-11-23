@@ -46,4 +46,4 @@ core, queue, max가 모두 설정되는 경우는 드물다! 설정에 따라 Po
 
 _pool-induced deadlock_ : 어떤 작업이 다른 작업을 실행하기 위해 다른 thread를 사용하려고 할 때 core pool size가 꽉 차서 해당 작업이 queue에 들어가서 언제 실행될지 모르는 상태가 발생하는 경우 pool-induced deadlock 이라고 함
 
-[FROM HERE] (https://blog.jessitron.com/2014/01/choosing-executorservice.html?m=1)
+[FROM HERE](https://blog.jessitron.com/2014/01/choosing-executorservice.html?m=1)
