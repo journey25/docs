@@ -1,8 +1,10 @@
 ## Spring Scheduling
 
 1. Introduction
+
 Executor라고 이름한 이유는 구현체들이 pool 이라고 보장할 수 없기 때문; single-thread로 실행되거나 동기로 실행될 수 있다
 2. The Spring TaskExecutor abstraction
+
 java.util.concurrent.Executor interface를 구현하고 있는 이유는 java 5 등 하위버전에서 thread-pool 사용 시의 호환성 때문
 3. TaskExecutor Types
   - SimpleAsyncTaskExecutor
