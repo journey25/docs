@@ -1,12 +1,12 @@
 ## Choosing an Executor - ThreadPoolExecutor
 
-#### 여러 개의 Task를 실행할 때
+### 여러 개의 Task를 실행할 때
 - simple parallel computation 인 경우에는 여러 thread만으로도 충분
   - a fixed pool with as many threads as CPUs works
 - simple parallel computation + other task 필요가 있는 경우에는 ForkJoinPool 이용
 - I/O block을 막기 위해서는 I/O를 기다리는 thread 갯수에 limit을 두는 대신 Executors.newCachedThreadPool 가 좋은 선택 
 
-#### Pool 이 사용되는 방식
+### Pool 이 사용되는 방식
 
 ##### core pool size
   task가 요청되면 Executor는 thread를 새로 만든다. core pool size가 다 찰 때까지.
@@ -30,7 +30,7 @@
   - core : 5, max : 8, queue : 7 (8 - 5 = 3 개의 thread를 추가로 생성)
     5개의 작업이 thread에 꽉차면 뒤로 7개 작업이 들어오고 그 뒤로 3개의 작업으로 인해 thread가 추가로 생성
 
-#### Pool 이 설정되는 방식
+### Pool 이 설정되는 방식
 core, queue, max가 모두 설정되는 경우는 드물다! 설정에 따라 Pool을 구분할 수 있는데,
 
 ##### FixedThreadPool
@@ -42,7 +42,8 @@ infinite thread number + empty queue
   - pool-induced deadlock을 방지할 수 있다   
   - Thread가 바쁘면 Timeout이 발생하는데, 바쁜 건 어떻게 알 수 있지?
 
-##### ForkJoinPool : For recursive calculations 
+##### ForkJoinPool
+For recursive calculations 
 
 
 _pool-induced deadlock_ : 어떤 작업이 다른 작업을 실행하기 위해 다른 thread를 사용하려고 할 때 core pool size가 꽉 차서 해당 작업이 queue에 들어가서 언제 실행될지 모르는 상태가 발생하는 경우 pool-induced deadlock 이라고 함
