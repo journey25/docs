@@ -1,4 +1,5 @@
 ## Choosing an Executor - ThreadPoolExecutor
+[Choosing an Executor Service](https://blog.jessitron.com/2014/01/choosing-executorservice.html?m=1) from blog.jessitron.com
 
 ### 여러 개의 Task를 실행할 때
 - simple parallel computation 인 경우에는 여러 thread만으로도 충분
